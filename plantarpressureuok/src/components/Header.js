@@ -13,7 +13,7 @@ function Header() {
           </a>
         </div>
         <div className="navbar-collapse collapse">
-          <ul className="nav navbar-nav ml-auto">
+          {/* <ul className="nav navbar-nav ml-auto">
             <li className="nav-item active">
               <a className="nav-link" href="/">
                 Home <span className="sr-only">(current)</span>
@@ -29,7 +29,7 @@ function Header() {
                 Pricing
               </a>
             </li>
-          </ul>
+          </ul> */}
         </div>
       </div>
     </nav>

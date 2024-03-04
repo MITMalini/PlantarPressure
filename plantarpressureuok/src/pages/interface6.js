@@ -4,7 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import { projectFirestore } from "../components/firebase-config";
 import { ref, onValue, set, update } from "firebase/database";
-import MyLineChart from "./Charts/MyLinechart";
+import MyLineChart from "./Charts/MyLinechartSport";
 
 function Interface4() {
   const location = useLocation();
@@ -16,19 +16,11 @@ function Interface4() {
   const [sensorData3, setSensorData3] = useState([]);
   const [sensorData4, setSensorData4] = useState([]);
   const [sensorData5, setSensorData5] = useState([]);
-  const [sensorData6, setSensorData6] = useState([]);
-  const [sensorData7, setSensorData7] = useState([]);
-  const [sensorData8, setSensorData8] = useState([]);
-  const [sensorData9, setSensorData9] = useState([]);
   const [picsensorData1, setpicSensorData1] = useState();
   const [picsensorData2, setpicSensorData2] = useState();
   const [picsensorData3, setpicSensorData3] = useState();
   const [picsensorData4, setpicSensorData4] = useState();
   const [picsensorData5, setpicSensorData5] = useState();
-  const [picsensorData6, setpicSensorData6] = useState();
-  const [picsensorData7, setpicSensorData7] = useState();
-  const [picsensorData8, setpicSensorData8] = useState();
-  const [picsensorData9, setpicSensorData9] = useState();
   const [thisid, setThisId] = useState();
   const [sensorData, setSensorData] = useState([]);
   const handleClick = async (e) => {
@@ -39,18 +31,17 @@ function Interface4() {
         value: 0,
         sportId: 0,
       });
-      await update(ref(projectFirestore, `sensor/Sport/${event}`), {
+      await update(ref(projectFirestore, `sensor/FootType/${event}`), {
         runtime: secondsElapsed, // Add or update the RunTime field
       });
       // Optionally, you can clear the form after submitting
-      alert("Sport Mode Ended Successfully!"); // Set the success message
+      alert("Foot Mode Ended Successfully!"); // Set the success message
       // Optionally, you can clear the success message after a few seconds
-      navigate("/interface5", {
+      navigate("/interface7", {
         state: {
           sportId: event,
         },
       });
-      console.log(event);
       // Optionally, you can navigate to a different page or show a success message
     } catch (error) {
       // Handle the error (you can show an error message to the user)
@@ -68,13 +59,8 @@ function Interface4() {
           setpicSensorData3(picdata.sensor3);
           setpicSensorData4(picdata.sensor4);
           setpicSensorData5(picdata.sensor5);
-          setpicSensorData6(picdata.sensor6);
-          setpicSensorData7(picdata.sensor7);
-          setpicSensorData8(picdata.sensor8);
-          setpicSensorData9(picdata.sensor9);
         }
       });
-
       const sensorRef1 = ref(
         projectFirestore,
         `/sensor/Sport/${event}/sensor1`
@@ -275,168 +261,7 @@ function Interface4() {
           console.error("Error fetching data:", error);
         }
       );
-      const sensorRef6 = ref(
-        projectFirestore,
-        `/sensor/Sport/${event}/sensor6`
-      );
-      onValue(
-        sensorRef6,
-        (snapshot) => {
-          const data = snapshot.val();
-          if (data) {
-            const oneMinuteAgo = Date.now() - 60000;
-            const convertedData = Object.entries(data).map(([key, value]) => {
-              // Parse the timestamp string to a Date object
-
-              const timestamp = new Date(value.timestamp);
-
-              // Convert the timestamp to Sri Lankan time
-              const options = { timeZone: "Asia/Colombo", hour12: false };
-
-              // Extract hours, minutes, and seconds
-              const hours = timestamp.getHours();
-              const minutes = timestamp.getMinutes();
-              const seconds = timestamp.getSeconds();
-
-              // Format the time as "HH:mm:ss"
-              const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-              return {
-                time: formattedTime,
-                sensor6: value.value,
-              };
-            });
-            setSensorData6(convertedData);
-          } else {
-            console.log("No data available");
-          }
-        },
-        (error) => {
-          console.error("Error fetching data:", error);
-        }
-      );
-      const sensorRef7 = ref(
-        projectFirestore,
-        `/sensor/Sport/${event}/sensor7`
-      );
-      onValue(
-        sensorRef7,
-        (snapshot) => {
-          const data = snapshot.val();
-          if (data) {
-            const oneMinuteAgo = Date.now() - 60000;
-            const convertedData = Object.entries(data).map(([key, value]) => {
-              // Parse the timestamp string to a Date object
-
-              const timestamp = new Date(value.timestamp);
-
-              // Convert the timestamp to Sri Lankan time
-              const options = { timeZone: "Asia/Colombo", hour12: false };
-
-              // Extract hours, minutes, and seconds
-              const hours = timestamp.getHours();
-              const minutes = timestamp.getMinutes();
-              const seconds = timestamp.getSeconds();
-
-              // Format the time as "HH:mm:ss"
-              const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-              return {
-                time: formattedTime,
-                sensor7: value.value,
-              };
-            });
-            setSensorData7(convertedData);
-          } else {
-            console.log("No data available");
-          }
-        },
-        (error) => {
-          console.error("Error fetching data:", error);
-        }
-      );
-      const sensorRef8 = ref(
-        projectFirestore,
-        `/sensor/Sport/${event}/sensor8`
-      );
-      onValue(
-        sensorRef8,
-        (snapshot) => {
-          const data = snapshot.val();
-          if (data) {
-            const oneMinuteAgo = Date.now() - 60000;
-            const convertedData = Object.entries(data).map(([key, value]) => {
-              // Parse the timestamp string to a Date object
-
-              const timestamp = new Date(value.timestamp);
-
-              // Convert the timestamp to Sri Lankan time
-              const options = { timeZone: "Asia/Colombo", hour12: false };
-
-              // Extract hours, minutes, and seconds
-              const hours = timestamp.getHours();
-              const minutes = timestamp.getMinutes();
-              const seconds = timestamp.getSeconds();
-
-              // Format the time as "HH:mm:ss"
-              const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-              return {
-                time: formattedTime,
-                sensor8: value.value,
-              };
-            });
-            setSensorData8(convertedData);
-          } else {
-            console.log("No data available");
-          }
-        },
-        (error) => {
-          console.error("Error fetching data:", error);
-        }
-      );
-      const sensorRef9 = ref(
-        projectFirestore,
-        `/sensor/Sport/${event}/sensor9`
-      );
-      onValue(
-        sensorRef9,
-        (snapshot) => {
-          const data = snapshot.val();
-          if (data) {
-            const oneMinuteAgo = Date.now() - 60000;
-            const convertedData = Object.entries(data).map(([key, value]) => {
-              // Parse the timestamp string to a Date object
-
-              const timestamp = new Date(value.timestamp);
-
-              // Convert the timestamp to Sri Lankan time
-              const options = { timeZone: "Asia/Colombo", hour12: false };
-
-              // Extract hours, minutes, and seconds
-              const hours = timestamp.getHours();
-              const minutes = timestamp.getMinutes();
-              const seconds = timestamp.getSeconds();
-
-              // Format the time as "HH:mm:ss"
-              const formattedTime = `${hours}:${minutes}:${seconds}`;
-
-              return {
-                time: formattedTime,
-                sensor9: value.value,
-              };
-            });
-            setSensorData9(convertedData);
-          } else {
-            console.log("No data available");
-          }
-        },
-        (error) => {
-          console.error("Error fetching data:", error);
-        }
-      );
     };
-
     fetchData();
 
     const interval = setInterval(() => {
@@ -456,23 +281,9 @@ function Interface4() {
       ...sensorData3[index],
       ...sensorData4[index],
       ...sensorData5[index],
-      ...sensorData6[index],
-      ...sensorData7[index],
-      ...sensorData8[index],
-      ...sensorData9[index],
     }));
     setSensorData(mergedData);
-  }, [
-    sensorData1,
-    sensorData2,
-    sensorData3,
-    sensorData4,
-    sensorData5,
-    sensorData6,
-    sensorData7,
-    sensorData8,
-    sensorData9,
-  ]);
+  }, [sensorData1, sensorData2, sensorData3, sensorData4, sensorData5]);
   if (sensorData1.length === 0) {
     return (
       <div style={{ textAlign: "center" }}>
@@ -484,21 +295,11 @@ function Interface4() {
   return (
     <div className="maindiv">
       <Header />
-      <p className="fontHeading">SPORT MONITORING DETECTION</p>
+      <p className="fontHeading">FOOT CONDITION DETECTION</p>
       <div className="maindiv1">
         <div className="maindiv9">
           <div className="imagediv">
-            <div className="foot1-reading">
-              <div className="sensor-reading">{picsensorData8}</div>
-              <div className="sensor-reading">{picsensorData7}</div>
-              <div className="sensor-reading">{picsensorData6}</div>
-            </div>
-            <div className="foot1">
-              <div className="sensor">8</div>
-              <div className="sensor">7</div>
-              <div className="sensor">6</div>
-            </div>
-            <div className="foot2-reading">
+            <div className="foottype">
               <div className="sensor-reading">{picsensorData1}</div>
               <div className="sensor-reading">{picsensorData3}</div>
               <div className="sensor-reading">{picsensorData5}</div>
@@ -515,12 +316,6 @@ function Interface4() {
             <div className="foot3">
               <div className="sensor">2</div>
               <div className="sensor">4</div>
-            </div>
-            <div className="foot4-reading">
-              <div className="sensor-reading">{picsensorData9}</div>
-            </div>
-            <div className="foot4">
-              <div className="sensor">9</div>
             </div>
           </div>
           <div className="maindive10">

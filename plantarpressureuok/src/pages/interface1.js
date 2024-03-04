@@ -18,7 +18,7 @@ function Interface1() {
       <div className="maindiv1">
         <div className="maindiv2">
           <div>
-            <p className="font1">INSOLE 1.0</p>
+            <p className="font1">INSOLE 1.0v</p>
             <div className="maindiv3">
               <button className="button1" onClick={handleClick}>
                 FOOT TYPE

@@ -38,7 +38,7 @@
 }
 .navbar {
   width: 100%;
-  padding: 20px; /* Adjust the padding as needed */
+  padding: 1vh; /* Adjust the padding as needed */
 }
 
 .navbar-brand {
@@ -46,7 +46,7 @@
   padding-bottom: 0.5rem; /* Adjust the bottom padding of the brand */
   font-size: 2rem; /* Adjust the font size of the brand */
   font-family: "Arial", sans-serif; /* Change the font family */
-  font-size: 35px; /* Change the font size */
+  font-size: 30px; /* Change the font size */
   font-weight: bold; /* Change the font weight */
   color: #fff !important; /* Change the font color */
   font-weight: 900;
@@ -59,4 +59,10 @@
   font-weight: normal; /* Change the font weight */
   color: #fff; /* Change the font color */
   font-weight: 900;
+}
+.navbar-header {
+  height: 15vh;
+  padding-top: 2vh;
+  align-items: center;
+  justify-content: center;
 }

@@ -5,6 +5,8 @@ import Interface1 from "./pages/interface1";
 import Interface2 from "./pages/interface2";
 import Interface3 from "./pages/interface3";
 import Interface4 from "./pages/interface4";
+import Interface5 from "./pages/interface5";
+import Interface6 from "./pages/interface6";
 
 function App() {
   return (
@@ -16,6 +18,8 @@ function App() {
           <Route path="/interface2" element={<Interface2 />} />
           <Route path="/interface3" element={<Interface3 />} />
           <Route path="/interface4" element={<Interface4 />} />
+          <Route path="/interface5" element={<Interface5 />} />
+          <Route path="/interface6" element={<Interface6 />} />
         </Routes>
       </BrowserRouter>
     </div>
