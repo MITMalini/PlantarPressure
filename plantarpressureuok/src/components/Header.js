@@ -8,7 +8,7 @@ function Header() {
     >
       <div className="container-fluid">
         <div className="navbar-header">
-          <a className="navbar-brand" href="/">
+          <a className="navbar-brand" href="/interface1">
             PLANTAR PRESSURE MONITORING SYSTEM
           </a>
         </div>

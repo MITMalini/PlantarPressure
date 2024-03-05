@@ -89,7 +89,7 @@ function Interface5() {
 
               return {
                 time: formattedTime,
-                sensor1: value.value,
+                sensor1: value.value + "N",
               };
             });
             setSensorData1(sensor1);
@@ -160,7 +160,7 @@ function Interface5() {
 
               return {
                 time: formattedTime,
-                sensor2: value.value,
+                sensor2: value.value + "N",
               };
             });
             setSensorData2(sensor2);
@@ -230,7 +230,7 @@ function Interface5() {
 
               return {
                 time: formattedTime,
-                sensor3: value.value,
+                sensor3: value.value + "N",
               };
             });
             setSensorData3(sensor3);
@@ -300,7 +300,7 @@ function Interface5() {
 
               return {
                 time: formattedTime,
-                sensor4: value.value,
+                sensor4: value.value + "N",
               };
             });
             setSensorData4(sensor4);
@@ -370,7 +370,7 @@ function Interface5() {
 
               return {
                 time: formattedTime,
-                sensor5: value.value,
+                sensor5: value.value + "N",
               };
             });
             setSensorData5(sensor5);
@@ -440,7 +440,7 @@ function Interface5() {
 
               return {
                 time: formattedTime,
-                sensor6: value.value,
+                sensor6: value.value + "N",
               };
             });
             setSensorData6(sensor6);
@@ -510,7 +510,7 @@ function Interface5() {
 
               return {
                 time: formattedTime,
-                sensor7: value.value,
+                sensor7: value.value + "N",
               };
             });
             setSensorData7(sensor7);
@@ -579,7 +579,7 @@ function Interface5() {
               const formattedTime = `${hours}:${minutes}:${seconds}`;
               return {
                 time: formattedTime,
-                sensor8: value.value,
+                sensor8: value.value + "N",
               };
             });
             setSensorData8(sensor8);
@@ -648,7 +648,7 @@ function Interface5() {
               const formattedTime = `${hours}:${minutes}:${seconds}`;
               return {
                 time: formattedTime,
-                sensor9: value.value,
+                sensor9: value.value + "N",
               };
             });
             setSensorData9(sensor9);

@@ -89,7 +89,7 @@ function Interface4() {
 
               return {
                 time: formattedTime,
-                sensor1: value.value,
+                sensor1: value.value + "N",
               };
             });
             setSensorData1(convertedData);
@@ -129,7 +129,7 @@ function Interface4() {
 
               return {
                 time: formattedTime,
-                sensor2: value.value,
+                sensor2: value.value + "N",
               };
             });
             setSensorData2(convertedData);
@@ -169,7 +169,7 @@ function Interface4() {
 
               return {
                 time: formattedTime,
-                sensor3: value.value,
+                sensor3: value.value + "N",
               };
             });
             setSensorData3(convertedData);
@@ -209,7 +209,7 @@ function Interface4() {
 
               return {
                 time: formattedTime,
-                sensor4: value.value,
+                sensor4: value.value + "N",
               };
             });
             setSensorData4(convertedData);
@@ -249,7 +249,7 @@ function Interface4() {
 
               return {
                 time: formattedTime,
-                sensor5: value.value,
+                sensor5: value.value + "N",
               };
             });
             setSensorData5(convertedData);
